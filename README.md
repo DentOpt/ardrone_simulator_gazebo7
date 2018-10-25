@@ -23,17 +23,17 @@ Move drone from commandline:
 
 
 Control AR.Drone 2.0 in with denmpc:
-either:
+either to track center of UAV:
 
-    rosrun denmpc scenario_ardrone_pose_tracking_node #To track center of UAV
+    rosrun denmpc scenario_ardrone_pose_tracking_node
  
- or:
+ or to track with sensor constraint:
  
-    rosrun denmpc scenario_ardrone_sensor_tracking_node #To track with sensor constraint
+    rosrun denmpc scenario_ardrone_sensor_tracking_node
  
- and:
+ and to send desired pose:
  
-    #Send desired pose
+    
     rostopic pub /desiredpose geometry_msgs/PoseStamd '{header: {stamp: now, frame_id: "map"}, pose: {position: {x: 0.0, y: 0.0, z: 2.0}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}'
 
 
