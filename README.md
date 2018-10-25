@@ -1,5 +1,9 @@
 ModifiedTUM_simulator
 =============
+Author: Jan Dentler    
+Date: 25.10.2018   
+Email: jan.dentler@uni.lu
+
 
 The AR.Drone 2.0 simulator is configured to subscribe control commands under the topic "/cmd_vel".
 
