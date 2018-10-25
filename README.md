@@ -1,3 +1,35 @@
+ModifiedTUM_simulator
+=============
+
+The AR.Drone 2.0 simulator is configured to subscribe control commands under the topic "/cmd_vel".
+
+The AR.Drone 2.0 pose  published under "/pose"
+
+
+Launch gazebo scenario from commandline:
+
+    roslaunch cvg_sim\_gazebo ardrone_testworld.launch 
+    
+Launch drone (Takeoff) from commandline:
+    
+    rostopic pub -1 /ardrone/takeoff std_msgs/Empty
+    
+Move drone from commandline:
+    
+
+
+Control AR.Drone 2.0 in with denmpc:
+
+    rosrun denmpc scenario_ardrone_pose_tracking_node #To track center of UAV
+ 
+    rosrun denmpc scenario_ardrone_sensor_tracking_node #To track with sensor constraint
+ 
+    #Send desired pose
+    rostopic pub /desiredpose geometry_msgs/PoseStamd '{header: {stamp: now, frame_id: "map"}, pose: {position: {x: 0.0, y: 0.0, z: 2.0}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}'
+
+
+
+
 tum_simulator on Indigo and Gazebo 7
 =============
 
